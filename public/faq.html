@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>x-app</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <!-- <script src="https://cdn.auth0.com/js/lock/11.14/lock.min.js"></script> -->
+</head>
+
+<body>
+  <div class="keywords">keywords here</div>
+  <div id="navbar" class="navbar">
+    <!-- Logos and Hot it works -->
+    <div class="flex flex-center">
+      <img src="images/logo-home1.png" class="logo1" />
+      <!-- <img src="images/Logo2a2.jpg" class="logo2" /> -->
+      <a href="#howitworks" style="text-decoration:none" class="howitworks"><i class="far fa-eye"></i>
+        Explore</a>
+    </div>
+    <nav>
+      <ul>
+        <!-- <li><a href="index.html" id="join" class="join">Join</a></li> -->
+        <li><a href="index.html" style="text-decoration:none" id="login" class="login"><i class="fas fa-handshake"></i>Login|Join</a></li>
+        <li><a href="#" id="logout"style="text-decoration:none" ><i class="fas fa-external-link-alt"></i>Logout</a></li>
+
+
+        <li><a href="#about" class="about" style="text-decoration:none"><i class="fas fa-network-wired"></i></i>About</a></li>
+        <li><a href="faq.html" class="faq" style="text-decoration:none"><i class="far fa-question-circle"></i>FAQ</a></li>
+        <li><a href="mailto:keng4105@gmail.com" class="contact" target="_blank" style="text-decoration:none"><i class="fas fa-envelope"></i>Contact</a></li>
+        <li><a href="home.html" class="home" style="text-decoration:none"><img class="home-logo" src="./images/Logo2a2.jpg"></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="bodyContainer-faq">
+
+  <div class="FAQ-container">Need Help? <br>
+    View Our List of Frequently Asked Questions Below.<br>
+    If You cannot find an answer to your question, please contact us.
+    </div>
+  <div class="FAQ-title"><div>
+
+  <div class="FAQ-questions">
+    <div class="howU">How should I ?</div>
+      <a href></a>
+    <div class="howU2">How should I ?</div>
+      <a href></a>
+    <div class="how3">How should I ?</div>
+      <a href></a>
+    <div class="howU4">How should I ?</div>
+      <a href></a>
+    <div class="how5">How should I ?</div>
+  </div>
+
+  <div class="FAQ-answers">
+      <div class="ucan">u should</div>
+      <a href></a>
+    <div class="ucan2">u should</div>
+      <a href></a>
+    <div class="ucan3">u should</div>
+      <a href></a>
+    <div class="ucan4">u should</div>
+      <a href></a>
+    <div class="ucan5">u should</div>
+  </div>
+  <!-- Skip to content
+Search…
+All gists
+Back to GitHub
+ 
+Instantly share code, notes, and snippets.
+
+@orrsella orrsella/notepad.html
+Last active 10 days ago
+4 2
+ Code  Revisions 10  Stars 4  Forks 2
+ 
+<script src="https://gist.github.com/orrsella/5993867.js"></script>
+  
+Simple in-browser html notepad
+ notepad.html
+data: text/html,
+<html>
+    <head>
+        <title>Notepad</title>
+        <link rel="icon" type="image/png" href="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Notepad-icon.png">
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#text').bind('keyup', function() {
+                    var content = $(this).val();
+                    setTitle(content);
+                    setLineNumber(content);
+                });
+                $('#text').bind('focus click', function() {
+                    var content = $(this).val();
+                    setLineNumber(content);
+                });
+            });
+            function setTitle(content) {
+                var lines = content.split('\n');
+                for (i = 0; i < lines.length; i++) {
+                    if (lines[i].trim().length > 0) {
+                        document.title = lines[i];
+                        return 0;
+                    }
+                }
+                document.title = "Notepad";
+            }
+            function setLineNumber(content) {
+                var lineNumber = content.substr(0, $('#text').prop('selectionStart')).split("\n").length;
+                $('#lineNumber').html(lineNumber);
+            }
+        </script>
+        <style type="text/css">
+        </style>
+    </head>
+    <body style="margin: 0;">
+        <textarea id="text" autofocus spellcheck="false"></textarea>
+        <div id="ruler"></div>
+        <div id="statusBar">
+            <div id="statusBarText">Line <span id="lineNumber">1</span></div>
+        </div>
+    </body>
+</html> -->
+</div>
+  </div>
+  </div>
+    <footer class="site-footer">
+        Sign Up &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Login &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Help &nbsp;
+        &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; Terms &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Business &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        Marketing
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Developers &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; © 2019 Project.com
+      </footer>
+    </footer>
+    </div>
+
+</body>  
+</html>

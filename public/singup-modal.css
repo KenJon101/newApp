@@ -1,0 +1,60 @@
+body {
+  background: rgb(35, 86, 140);
+  text-align: center;
+}
+
+header {
+  background: url(http://localhost:8000/client/images/project-main-logo.jpg) no-repeat;
+  height: 100px;
+  background-size: contain;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+}
+
+.body-overlay2 {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+input {
+  padding: 3px 5px;
+}
+
+/* modal */
+
+.phone-number-fields {
+  text-align: center;
+}
+
+#profile-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  margin: auto;
+}
+
+#termsConditionsSection{
+  display: none;
+}
+
+.modal-text{
+  margin-top: 50px;
+  color: white;
+  text-align: center;
+}
+
+#agreeToTermsConditions{
+  margin-left:  300px;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal-agreement {
+  margin-bottom: 15px;
+}

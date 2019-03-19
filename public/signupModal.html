@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>x-app</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <link href="singup-modal.css" rel="stylesheet" type="text/css" />
+  <!-- <script src="https://cdn.auth0.com/js/lock/11.14/lock.min.js"></script> -->
+</head>
+
+<body class="signup">
+
+  <header>
+  </header>
+
+  <div class="body-overlay2">
+    <div id="profile-modal" class="modal" style="display:none">
+      <div class="phone-number-fields">
+        <div class="form-group">
+          <input type="text" id="phoneNumber" class="phone-validate form-control custom-form-control "
+            placeholder="Phone number">
+          <input type="text" id="verificationCode" class="verify-code form-control custom-form-control "
+            placeholder="Verification Code">
+        </div>
+        <div class="form-group">
+          <button class="form-control registration-button phone-validate" id="btnSignup"
+            onClick="validatePhoneNumber()">
+            Join
+          </button>
+          <button class="form-control registration-button verify-code" id="btnSignup" onClick="validatePhoneCode()">
+            Validate
+          </button>
+        </div>
+        <div id="recaptcha-container"></div>
+
+        <!--<div class="phoneNumber-explain">We will not call you. Your phone number is only used for ID validation.
+        </div>-->
+      </div>
+      <div id="termsConditionsSection">
+
+        <div class="modal-agreement">By click the button you agree to the terms and conditions below.
+        </div>
+
+        <div class="modal-agreement">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in
+          a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
+          professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
+          from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
+          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+          (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
+          very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from
+          a line in section 1.10.32.
+
+          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+          1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original
+          form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </div>
+
+        <div id="agreeContainer">
+
+        </div>
+        <!-- <button id="agreeToTermsConditions">Yes I Agree</button> -->
+        <button id="noAgreeToTermsConditions">I Don't Agree</button>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+  <!-- <div>Which laguage do you like best?</div>>
+    <button id="languageEnglish">English</button>
+    <button id="languageHindi">Hindi</button>
+    <button id="languageMandarin">Mandarin</button>
+    <button id="languageSpanish">Spanish</button>
+    </div> -->
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script src="lib.js"></script>
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+  <script src="recipes.js"></script>
+  <script src="index.js"></script>
+  <script src="musicMatch.js"></script>
+
+  <script src="signup.js"></script>
+
+</body>
+
+</html>

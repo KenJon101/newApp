@@ -5,7 +5,7 @@
 // let userVerified = localStorage.getItem('verified') == 'true'
 
 // if (!userVerified) {
-//   window.location.href = '/client/index.html';
+//   window.location.href = '/index.html';
 // }
 
 let userID = ""

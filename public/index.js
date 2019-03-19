@@ -14,7 +14,7 @@ $(function () {
   // firebase.auth().onAuthStateChanged(user => {
 
   //   if (user) {
-  //     window.location.href = '/client/profilepage.html';
+  //     window.location.href = '/profilepage.html';
   //   }
   //   else {
 
@@ -63,7 +63,7 @@ $(function () {
   //       }).then(() => {
   //         //localStorage.setItem("currentUserUID", JSON.stringify({uid: uid}));
   //          
-  //         window.location.href = '/client/profilepage.html';
+  //         window.location.href = '/profilepage.html';
 //       }).catch(console.error);
   //       console.log("user:", user);
   //     })
@@ -97,7 +97,7 @@ $(function () {
   //   //var password = txtLoginPassworlue;
   //   // const authResult = await signIn();
     
-  //   // window.location.href = '/client/profilepage.html';
+  //   // window.location.href = '/profilepage.html';
  });
   
   // join

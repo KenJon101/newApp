@@ -100,7 +100,7 @@ async function signIn() {
 
     if (userInFB) {
       // already in firebase
-      window.location.href = '/client/profilepage.html';
+      window.location.href = '/profilepage.html';
     } else {
       // create user in firebase
       let { picture, email, given_name, family_name } = result.additionalUserInfo.profile;
@@ -144,7 +144,7 @@ async function signIn() {
       // });
 
 
-      window.location.href = '/client/signupModal.html';
+      window.location.href = '/signupModal.html';
 
     }
 
@@ -209,7 +209,7 @@ if (false) {
     e.preventDefault();
     //let userObj = await getUser();
     getPublicUserDoc().update({ agreed: 1 }).then(() => {
-      window.location.href = '/client/profilepage.html';
+      window.location.href = '/profilepage.html';
     });
   });
 }
@@ -281,7 +281,7 @@ function logoutUserAndRemoveStoredData() {
   localStorage.removeItem('verified');
   firebase.auth().signOut();
   setTimeout(function () {
-    window.location.href = '/client/index.html';
+    window.location.href = '/index.html';
   }, 10);
 }
 async function deleteMyAccount() {
@@ -309,7 +309,7 @@ async function deleteMyAccount() {
 //  //   let idToken = await firebase.auth().currentUser.getIdToken();
 //   //   localStorage.setItem("idToken", idToken); 
 
-//  //   window.location.href = '/client/profilepage.html';
+//  //   window.location.href = '/profilepage.html';
   
 //   // } catch (err) {
 

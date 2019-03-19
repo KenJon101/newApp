@@ -21,7 +21,6 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 });
 
 exports.getItems = functions.https.onRequest((req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
 
   return cors(req, res, () => {
     if (req.method !== 'POST') {
@@ -31,7 +30,7 @@ exports.getItems = functions.https.onRequest((req, res) => {
     }
 
 
-    const skills = req.body.skills.split(',');
+    const skills = req.body.skills;
     const currentUID = req.body.uid;
     let n = 5;
     let users = [];
@@ -85,9 +84,38 @@ exports.getItems2 = functions.https.onRequest((req, res) => {
   }
   if (req.method === 'POST') {
 
-    const item = req.body.item;
-    return cors(req2, res2, () => {
-      res.status(200).json(['test', req.body]);
+    return cors(req, res, () => {
+      try {
+        
+        const skills = req.body;
+        const currentUID = req.body.uid;
+        let n = 5;
+        let users = [];
+        let userRef = db.collection('users');
+  
+        userRef.get().then(snapshot => {
+          if (snapshot && snapshot.docs && snapshot.docs.length) {
+
+            snapshot.docs.forEach((item) => {
+              let userData = item.data();
+              users.push(userData)
+              // let found = users.filter(usr => usr.userUID === userData.userUID);
+              // if (found.length === 0) {
+              //   users.push(userData);
+              // }
+            });
+          }
+          //users = users.filter(usr => usr.userUID !== currentUID);
+          return users;
+        }).then(users => {
+          
+          res.status(200).json(users);
+        })
+
+      } catch (error) {
+        
+        res.status(500).json(error);
+      }
     })
   }
 })
@@ -101,7 +129,7 @@ exports.addItem = functions.https.onRequest((req, res) => {
     }
     console.log(req.body)
 
-    const item = req.body.item
+    const item = req.body;
 
     //database.push({ item });
 

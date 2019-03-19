@@ -18,7 +18,7 @@
     let userVerified = localStorage.getItem('verified') == 'true'
 
     if (!userVerified) {
-      //window.location.href = '/client/index.html';
+      //window.location.href = '/index.html';
     }
   </script>
 </head>
@@ -391,7 +391,7 @@
       $(document).ready(async function () {
         let userObj = await getUser();
         if (!userObj || userObj.verified !== 1) {
-          window.location.href = '/client/';
+          window.location.href = '/';
         }
       });
     </script>

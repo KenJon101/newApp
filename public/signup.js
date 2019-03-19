@@ -33,7 +33,7 @@ function validatePhoneCode() {
         /// delete curent user
         await deleteMyAccount();
         //redirect
-        window.location.href = '/client/';
+        window.location.href = '/';
       } else {
         await getPrivateUserDoc().update({
           phone: phoneNumber
@@ -71,7 +71,7 @@ function gotoTermsAndConditions() {
       localStorage.setItem('verified', 'true');
 
       
-      window.location.href = '/client/profilepage.html';
+      window.location.href = '/profilepage.html';
     }
     catch (err) {
       alert('Server error');
@@ -96,7 +96,7 @@ $(document).ready(async function () {
   let userObj = await getUser();
   if (userObj) {
     if (userObj.agreed == 1) {
-      window.location.href = '/client/profilepage.html';
+      window.location.href = '/profilepage.html';
     }
     else {
       $('#profile-modal').show();

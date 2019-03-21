@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+  <title>My first BootstrapVue app</title>
+
+  <!-- Required Stylesheets -->
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+
+  <!-- Required scripts -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+</head>
+
+<body>
+  <!-- Our application root element -->
+  <div id="app">
+    <div 
+      class="card" 
+      style="width: 18rem;" 
+      v-for="musician in musicians">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ musician.name }}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start running your app -->
+  <script>
+    window.app = new Vue({
+      el: '#app',
+      data: { //Straight data, make empty if using firebase
+        musicians: [],
+        skills: [],
+      },
+      computed: { //Things that should update all the time 
+
+      },
+      methods: { //Basically all your functions
+        getMusicians() {
+          //get musicians from firebase
+          this.musicians = firebaseresult;
+
+        }
+      },
+      created: function() {
+        this.getMusicians();
+      }
+    })
+  </script>
+</body>
+
+</html>

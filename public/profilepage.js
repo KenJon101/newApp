@@ -191,48 +191,6 @@ $('#user-name').text('(loading...)');
 //   // User is signed out.
 //   // ...
 
-
-
-
-// ################################################################################################
-// Recipe Debugging
-// ################################################################################################
-
-// maintain the "all recipes" list
-// see basic example in official documentation: https://firebase.google.com/docs/firestore/query-data/get-data
-// const $recipeList = $('#debug-recipe-list');
-// $recipeList.text('loading...');
-// firebase.firestore().collection("recipes").onSnapshot(function (querySnapshot) {
-//   $recipeList.empty(); // clear list
-
-//   // set count
-//   $('#debug-recipes-count').text(querySnapshot.size);
-
-//   // add all recipes
-//   console.log(querySnapshot)
-//   let n = 0
-//   querySnapshot.forEach(function (doc) {
-//     if (n < 5) {
-//       const id = doc.id;
-//       const recipe = doc.data();
-//       const $recipeEl = $(`<li id="recipe-${id}">${recipe.title}</li>`);
-//       $recipeList.append($recipeEl);
-//     }
-//     n++
-//   });
-// });
-
-
-// async function debugShowRandomRecipes(n) {
-//   $('#debug-random-recipes').text('loading...');
-
-//   // get recipe ids
-//   const ids = await getRandomRecipeIds(n);
-//   const recipes = await getRecipesById(ids);
-//   console.log(recipes)
-//   // $('#debug-random-recipes').text(recipes.slice(0,5).map(r => r && r.title || '<not found>').join('\n'));
-// }
-
 // init modal
 
 // check if user agreed

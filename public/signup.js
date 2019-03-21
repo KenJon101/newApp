@@ -14,7 +14,7 @@ function validatePhoneNumber() {
 
 function validatePhoneCode() {
   //Hide the verification section temporarily to prevent clicking twice
-  //You can show a "trying verification" text as well here
+  //Show a "trying verification" text as well here
   var verificationCode = $("#verificationCode").val();
   window.confirmationResult.confirm(verificationCode)
     .then(async function (result) {

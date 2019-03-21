@@ -110,35 +110,26 @@
               <!-- <div class="avatarPicButtons"> -->
               <button class="removePic" id="removePic">Remove</button>
 
-              <div class="choose-skill-block profile-image-block3 twoBySix">
-                <h4>Choose what type of Musician You Are</h4>
-                <form>
-                  <label><input type="checkbox" name="skills[]" value="guitar" id="Guitar"> Guitarist</label>
+
+              <div class="profile-image-block3 twoBySix">
+                <h4 class="choose-musician-block">Choose what type of Musician You Need</h4>
+                <h4 class="choose-skill-block">Choose what type of Musician You Are</h4>
+                <form class="skills-form">
+                  <label><input type="checkbox" name="skills[]" value="guitar"> Guitarist</label>
                   <br>
-                  <label><input type="checkbox" name="skills[]" value="bass" id="Bass"> Bassist<br></label>
-                  <label><input type="checkbox" name="skills[]" value="drums" id="Drums"> Drummer <br></label>
-                  <label><input type="checkbox" name="skills[]" value="keyboard" id="Keyboard"> Keyboardist</label>
+                  <label><input type="checkbox" name="skills[]" value="bass"> Bassist<br></label>
+                  <label><input type="checkbox" name="skills[]" value="drums"> Drummer <br></label>
+                  <label><input type="checkbox" name="skills[]" value="keyboard"> Keyboardist</label>
                   <br>
-                  <label><input type="checkbox" name="skills[]" value="brass" id="Brass"> Brass<br></label>
-                  <label><input type="checkbox" name="skills[]" value="other" id="Other"> Other<br></label>
-                  <button onclick="selectSkills(event)">
+                  <label><input type="checkbox" name="skills[]" value="brass"> Brass<br></label>
+                  <label><input type="checkbox" name="skills[]" value="other"> Other<br></label>
+
+                  <button type="button" onclick="selectSkills('musician')" class="choose-musician-block">
+                    SUb!
+                  </button>
+                  <button type="button" onclick="selectSkills('skill')" class="choose-skill-block">
                     BUTTON!
                   </button>
-                </form>
-              </div>
-
-              <div class="choose-musician-block profile-image-block3 twoBySix">
-                <h4>Choose what type of Musician You Need</h4>
-                <form>
-                  <label><input type="checkbox" name="skills[]" value="guitar" id="Guitar"> Guitarist</label>
-                  <br>
-                  <label><input type="checkbox" name="skills[]" value="bass" id="Bass"> Bassist<br></label>
-                  <label><input type="checkbox" name="skills[]" value="drums" id="Drums"> Drummer <br></label>
-                  <label><input type="checkbox" name="skills[]" value="keyboard" id="Keyboard"> Keyboardist</label>
-                  <br>
-                  <label><input type="checkbox" name="skills[]" value="brass" id="Brass"> Brass<br></label>
-                  <label><input type="checkbox" name="skills[]" value="other" id="Other"> Other<br></label>
-                  <input onclick="selectSkills()" type="submit" value="Submit">
                 </form>
                 <!--
                                       <form id="artist-skills">

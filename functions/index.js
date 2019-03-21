@@ -54,7 +54,7 @@ exports.getItems = functions.https.onRequest((req, res) => {
           return users;
         })
     })).then(data => {
-      let ids = users;
+      let ids = [];
       if (n >= users.length) {
         ids = users;
       } else {
@@ -74,6 +74,7 @@ exports.getItems = functions.https.onRequest((req, res) => {
 
   })
 })
+/*
 
 exports.getItems2 = functions.https.onRequest((req, res) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -119,6 +120,7 @@ exports.getItems2 = functions.https.onRequest((req, res) => {
     })
   }
 })
+*/
 
 exports.addItem = functions.https.onRequest((req, res) => {
   return cors(req, res, () => {

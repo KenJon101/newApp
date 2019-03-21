@@ -259,10 +259,20 @@ async function getRandomUsersBySkill(skills, n) {
 }
 
 function getRandomUsersFromServer(skills) {
-  $.post('https://us-central1-cproject-9bb5f.cloudfunctions.net/getItems', { skills: skills, uid: getUserId() }, function (response) {
-    console.log(response)
-  })
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: 'https://us-central1-cproject-9bb5f.cloudfunctions.net/getItems',
+      dataType: "json",
+      method: 'POST',
+      crossDomain: true,
+      data:  {skills: skills, uid: getUserId() },
+      success: (data) => {
+        resolve(data)
+      }
+    });
+  });
 }
+
 function buildSkillsForm(skills) {
   let form = $('<form/>', {
     'id': 'artist-skills-form'
@@ -277,11 +287,10 @@ function buildSkillsForm(skills) {
   });
   form.append($('<input>', { type: 'submit', value: 'Submit' }));
   form.on('submit', async function (e) {
-
     e.preventDefault();
     e.stopPropagation();
     const selected = $(this).find('input[type="radio"]:checked').toArray().map(item => item.value);
-    let skills = await getRandomUsersBySkill(selected, 5);
+    let skills = await getRandomUsersFromServer(selected, 5);
     console.log(skills);
     displayUsers(skills);
     return false;
@@ -289,9 +298,8 @@ function buildSkillsForm(skills) {
   $('#form-placeholder').append(form);
 }
 
+
 function displayUsers(users) {
-  users = users.concat(users, users);
-  delete users[0];
   let div = $('<div>');
   users.forEach(function (user) {
     let userDiv = $('<div>', {

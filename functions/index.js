@@ -77,6 +77,11 @@ exports.getItems = functions.https.onRequest((req, res) => {
                   return allSkills.filter(skItm => sk === skItm.index).shift();
                 });
               }
+              if(usr.neededSkills) {
+                usr.neededSkills = usr.neededSkills.map(sk => {
+                  return allSkills.filter(skItm => sk === skItm.index).shift();
+                });
+              }
               return usr;
             });
           }

@@ -1,5 +1,4 @@
 
-
 let loginButton = document.getElementById("login");
 
 let logoutButton = document.getElementById("logout");
@@ -252,12 +251,11 @@ function getUserId() {
 async function getUser() {
   let uid = getUserId();
   if (uid) {
-    const [userPublic, userPrivate] = await Promise.all([
-      getPublicUserDoc().get(),
-      getPrivateUserDoc().get()
+    const [userPublic] = await Promise.all([
+      getPublicUserDoc().get()
     ]);
 
-    return Object.assign({}, userPublic.data(), userPrivate.data());
+    return userPublic.data();
   }
   return null;
 }
@@ -292,30 +290,6 @@ async function deleteMyAccount() {
   
   logoutUserAndRemoveStoredData();
 }
-// // handle login
-// loginButton.addEventListener('click', loginBtnClicked);
-
-// async function loginBtnClicked() {
-//   lock.show();
-//   // var email = txtLoginEmail.value;
-//   // var password = txtLoginPassword.value;
-//   // var auth = firebase.auth();
-
-//   // try {
-
-//   //   let user = await auth.signInWithEmailAndPassword(email, password);
-//   //   localStorage.setItem("currentUserUID", JSON.stringify({uid: user.user.uid})); 
- 
-//  //   let idToken = await firebase.auth().currentUser.getIdToken();
-//   //   localStorage.setItem("idToken", idToken); 
-
-//  //   window.location.href = '/profilepage.html';
-  
-//   // } catch (err) {
-
-//   //   alert('Wrong Email or Password');
-//   // }
-
 
 
 

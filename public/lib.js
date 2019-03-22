@@ -48,7 +48,7 @@ async function addTestUsers() {
   for(var i=1; i++; i<5) {
     var uuid = Math.floor(Math.random() * 99999)+1;
 
-    await firebase.firestore().collection("users").add({
+    await firebase.firestore().collection("users").doc(uuid+'').set({
       agreed: 1,
       avatar: 'https://placekitten.com/80/80',
       firstname: 'Nameuser' + i,

@@ -60,7 +60,12 @@ async function addTestUsers() {
       skills: [
         Math.floor(Math.random() * 4)+1,
         Math.floor(Math.random() * 4)+1,
-      ]
+      ],
+      neededSkills: [
+        Math.floor(Math.random() * 4)+1,
+        Math.floor(Math.random() * 4)+1,
+      ],
+      recommendedUsers: []
     }).then(response => {
       console.log(response)
     }).catch(err => {

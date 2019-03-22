@@ -35,6 +35,7 @@ exports.getItems = functions.https.onRequest((req, res) => {
     let n = 5;
     let users = [];
     let userRef = db.collection('users');
+    
 
 
     return Promise.all(skills.map(skill_id => {
@@ -64,7 +65,24 @@ exports.getItems = functions.https.onRequest((req, res) => {
           ids.push(itemDoc);
         }
       }
-      res.status(200).json(ids);
+      return db.collection('skills').get().then(
+        skSnap => {
+
+          if (skSnap && skSnap.docs && skSnap.docs.length) {
+            const allSkills = skSnap.docs.map(itm => itm.data());
+            ids.map(usr => {
+              usr.allsk = allSkills;
+              if(usr.skills) {
+                usr.skills = usr.skills.map(sk => {
+                  return allSkills.filter(skItm => sk === skItm.index).shift();
+                });
+              }
+              return usr;
+            });
+          }
+          res.status(200).json(ids);
+        }
+      );
     }).catch(error => {
       res.status(error.code).json({
         message: `Something went wrong. ${error.message}`

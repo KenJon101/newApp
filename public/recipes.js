@@ -96,9 +96,7 @@ async function showUserRecipes(uid, user) {
         recipes: randomRecipeIds
       };
 
-      await firebase.firestore().collection('usersPrivate').doc(uid).update(
-        userUpdate
-      );
+  
       /*
             return await Promise.all(ids.map(async id => {
               const snap = await recipeColl.where(firebase.firestore.FieldPath.documentId(), '==', id).get();

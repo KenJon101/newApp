@@ -36,7 +36,7 @@
           <!-- <img src="images/Logo2a2.jpg" class="logo2" /> -->
           <a href="#howitworks" id="how-it-works" style="text-decoration:none" class="howitworks"><i
               class="far fa-eye"></i>
-            Explore</a>
+            Home</a>
         </div>
         <nav class="nav-list">
           <ul class="mainNav">
@@ -65,7 +65,7 @@
       <!--<img class="notebook-wrapper" src="./images/noteBook.png">-->
       <div class="statusWrapper">
         <iframe id="timeStamp"
-          src="http://free.timeanddate.com/clock/i6o01rsd/n784/fn16/fcfff/tct/pct/bas0/bat7/bacfff/pl0/pr0/pt2/pb0/tt0/th2/ta1/tb4"
+          src="https://free.timeanddate.com/clock/i6o01rsd/n784/fn16/fcfff/tct/pct/bas0/bat7/bacfff/pl0/pr0/pt2/pb0/tt0/th2/ta1/tb4"
           frameborder="0" width="202" height="32" allowTransparency="true">
         </iframe>
         <div class="profile-user-id-container">
@@ -84,7 +84,25 @@
       <!-- <div class="pro-tools">Pro-Tools</div> -->
       <!-- <div class="services-title"></div> -->
 
+  
+    <!-- Sidebar -->
+    <div class="profile-box">
+      <img id="profileAvatar" alt="" />
+      <div id="picture-text">~ "What will you do today?"</div>
 
+      <input style="display: none;" name="image-file" id="image-file" type="file" onchange="grabFile(event)">
+      <!-- <div class="avatarPicButtons"> -->
+      <button class="changePic">Change</button>
+      <button class="removePic" id="removePic">Remove</button>
+
+
+      <div class="profile-image-block3 twoBySix" id="skills-form-container">
+        <h3>Here are your contacts</h3>
+        <div class="profile-contact-list"></div>
+      </div>
+    </div>
+
+      
       <div class="profile-bodyContainer">
         <!-- <div class="profile-top">You are currently Logged In</div> -->
         <div class="left-side-profileContainer">
@@ -100,47 +118,6 @@
             <a href="#videos">Test</a>
           </div>
 
-          <!-- Sidebar -->
-          <div class="profile-image-block1 twoBySix">
-            <div class="profile-box">
-              <img id="profileAvatar" alt="" />
-              <div id="picture-text">~ "What will you do today?"</div>
-
-              <input style="display: none;" name="image-file" id="image-file" type="file" onchange="grabFile(event)">
-              <!-- <div class="avatarPicButtons"> -->
-              <button class="removePic" id="removePic">Remove</button>
-
-
-              <div class="profile-image-block3 twoBySix" id="skills-form-container">
-
-              </div>
-     <!--
-              <div class="profile-image-block3 twoBySix">
-                <h4 class="choose-musician-block">Choose what type of Musician You Need</h4>
-                <h4 class="choose-skill-block">Choose what type of Musician You Are</h4>
-                <form class="skills-form">
-                  <label><input type="checkbox" name="skills[]" value="guitar"> Guitarist</label>
-                  <br>
-                  <label><input type="checkbox" name="skills[]" value="bass"> Bassist<br></label>
-                  <label><input type="checkbox" name="skills[]" value="drums"> Drummer <br></label>
-                  <label><input type="checkbox" name="skills[]" value="keyboard"> Keyboardist</label>
-                  <br>
-                  <label><input type="checkbox" name="skills[]" value="brass"> Brass<br></label>
-                  <label><input type="checkbox" name="skills[]" value="other"> Other<br></label>
-
-                  <button type="button" onclick="selectSkills('musician')" class="choose-musician-block">
-                    SUb!
-                  </button>
-                  <button type="button" onclick="selectSkills('skill')" class="choose-skill-block">
-                    BUTTON!
-                  </button>
-                </form>
-
-              </div>
--->
-            </div>
-          </div>
-
 
           <div class="profile-services-grid">
 
@@ -152,7 +129,7 @@
               </p>
             </div>
 
-            <div class="profie-text-block-3 twoBySix">
+            <div class="profile-text-block-3 twoBySix">
               <h3><a href="" target="_blank">test</a></h3>
               <p>
                 <img src="./images/trn5a1.jpeg" alt="" />
@@ -167,7 +144,7 @@
               </p>
             </div>
 
-            <div class="profie-text-block-3 twoBySix">
+            <div class="profile-text-block-3 twoBySix">
               <h3><a href="" target="_blank">test</a></h3>
               <p>
                 <img src="./images/trn5a1.jpeg" alt="" />
@@ -182,7 +159,7 @@
               </p>
             </div>
 
-            <div class="profie-text-block-3 twoBySix">
+            <div class="profile-text-block-3 twoBySix">
               <h3><a href="" target="_blank">test</a></h3>
               <p>
                 <img src="./images/trn5a1.jpeg" alt="" />
@@ -197,7 +174,7 @@
               </p>
             </div>
 
-            <div class="profie-text-block-3 twoBySix">
+            <div class="profile-text-block-3 twoBySix">
               <h3><a href="" target="_blank">test</a></h3>
               <p>
                 <img src="./images/trn5a1.jpeg" alt="" />
@@ -246,12 +223,12 @@
             <div id="itemsOfInterest">
               <a href="" target="_blank"><img src="./images/trn5a1.jpeg" alt="" /></a>
             </div>
-            <div>item 2</div>
+            <!-- <div></div> -->
 
           </div>
         </div>
       </div>
-    </div>
+    
 
     <div id="videos-bottom" class="videos-container profile-text-block3">
       <h3>My Music</h3>
@@ -317,7 +294,6 @@
           </a>
           <a href="#">
             <i class="fab fa-pinterest"></i>
-          </a>
           </a>
           <a href="#">
             <i class="fab fa-youtube-square"></i>
@@ -436,7 +412,6 @@
       }
     </script>
     <script src="index.js"></script>
-
   </div>
   </div>
 </body>

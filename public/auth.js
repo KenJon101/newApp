@@ -108,20 +108,15 @@ async function signIn() {
         avatar: picture,
         firstname: given_name,
         userUID: id,
-        agreed: 0
-      };
-
-      let privateUserData = {
-        firstname: given_name,
-        lastname: family_name,
-        email,
-        recipes: [],
-        phone: ""
+        agreed: 0,
+        verified: 0,
+        skills: [],
+        neededSkills: [],
+        recommendedUsers: []
       };
 
 
       await Promise.all([
-        firebase.firestore().collection('usersPrivate').doc(id).set(privateUserData),
         firebase.firestore().collection('users').doc(id).set(publicUserData)
       ]);
 
@@ -263,9 +258,7 @@ async function getUser() {
 function getPublicUserDoc() {
   return firebase.firestore().collection('users').doc(getUserId());
 }
-function getPrivateUserDoc() {
-  return firebase.firestore().collection('usersPrivate').doc(getUserId());
-}
+
 
 function logoutUser(e) {
   // console.log('here')
@@ -284,8 +277,7 @@ function logoutUserAndRemoveStoredData() {
 }
 async function deleteMyAccount() {
   await Promise.all([
-    getPublicUserDoc().delete(),
-    getPrivateUserDoc().delete()
+    getPublicUserDoc().delete()
   ]);
   
   logoutUserAndRemoveStoredData();

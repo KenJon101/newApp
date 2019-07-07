@@ -35,7 +35,7 @@ function validatePhoneCode() {
         //redirect
         window.location.href = '/';
       } else {
-        await getPrivateUserDoc().update({
+        await getPublicUserDoc().update({
           phone: phoneNumber
         });
       }

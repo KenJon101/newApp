@@ -15,29 +15,13 @@ const defaultAvatar = 'https://firebasestorage.googleapis.com/v0/b/cproject-9bb5
 var storage = firebase.storage();
 var storageRef = storage.ref();
 
-// user name
-async function showUserData() {
-    let uid = getUserId();
-    firebase.firestore().collection("usersPrivate").doc(uid).onSnapshot(snap => {
-        const userObj = snap.data();
-        let name = userObj.firstname + " " + userObj.lastname;
-        $('#user-name').text(name);
-
-        showUserRecipes(getUserId(), userObj);
-    });
-}
-
-(async function () {
-  //  await showUserData();
-})()
 
 // avatar
 
-// let imageInput = document.getDocumentById("image-file");
-// imageInput.addEventListener("change", () => {
-//   console.log(this);
-
-// })
+//let imageInput = document.getDocumentById("image-file");
+/*imageInput.addEventListener("change", () => {
+   console.log(this);
+})*/
 
 // let storageRef = firebase.storage().ref();
 let uid = localStorage.getItem("uid")
@@ -134,7 +118,7 @@ async function emptyAvatar() {
 
 // }
 
-$('#user-name').text('(loading...)');
+// $('#user-name').text('(loading...)');
 
 
 // async function renderUser(user) {
@@ -382,9 +366,33 @@ $(document).ready(async () => {
         } else if (!loggedUser.neededSkills || loggedUser.neededSkills.length === 0) {
             type = 'needed-skills';
         }
-        buildSkillsForm(skills, type, '#skills-form-container');
+        buildSkillsForm(skills, type, '#skills-form-container .profile-contact-list');
     } else {
         let recommendedUsers = await getUsersByIds(loggedUser.recommendedUsers);
-        displayUsers(recommendedUsers, '#skills-form-container');
+        displayUsers(recommendedUsers, '#skills-form-container .profile-contact-list');
     }
 });
+
+
+$(window).on('scroll', function() {
+  var $elem = $('.profile-box');
+  var elemHeight = $elem.height() + 80;
+  var offset = 200 // $elem.offset().top;
+  var $body = $('.profile-bodyContainer');
+  var bodyBottom = $body.height() + $body.offset().top;
+  var limit = bodyBottom - (elemHeight + offset);
+  var scroll = window.scrollY;
+
+  if(scroll > limit) {
+    $elem.css({
+      position: 'absolute',
+      top: limit + offset + 25 + 'px'
+    })
+  } else {
+    $elem.css({
+      position: 'fixed',
+      top: 'initial'
+    })
+  }
+
+})

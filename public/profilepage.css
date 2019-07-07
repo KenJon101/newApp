@@ -4,20 +4,11 @@
   background-color: rgba(38, 91, 116, 0.445);
   background-size: cover;
   padding-top: 37px;
-  }
-  
-  .body-overlay-profile{
-    /* background-color: rgba(219, 213, 205, 0.726); */
-    background-image: url("images/Perth3.jpg");
-    background-size: cover;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,05abe0+100;Blue+3D+%23+16 */
-  /* background: #87e0fd; Old browsers */
-  /* background: -moz-linear-gradient(top, #87e0fd 0%, #53cbf1 40%, #05abe0 100%); FF3.6-15 */
-  /* background: -webkit-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); Chrome10-25,Safari5.1-6 */
-  /* background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); IE6-9 */
-  padding-top: 35px;
-  }
+}
+
+/* .body-overlay-profile {
+  padding: 0;
+}  */
 
 .sidenav a {
   padding: 2px 2px 6px 10px;
@@ -40,7 +31,7 @@
   text-align: center;
   width: 57%;
   transform: translateY(-20px);
-  margin-top: 25px;
+  margin-top: 50px;
   /* border-radius: 3px 3px; */
 }
 
@@ -62,36 +53,27 @@
   border-radius: 3px 3px;
 }
 
+.statusWrapper {
+  position: fixed;
+  width: 185px;
+  left: 40px;
+  top: 45px;
+  background-color: rgba(0, 172, 120, 0.637);
+  border-radius: 0 0 5px 5px;
+}
+
 #timeStamp {
   /* display: block; */
   /* position: fixed; */
-  background-color: rgba(0, 172, 120, 0.637);
-  width: 17%;
-  position: fixed;
-  top: 37px;
-  left: 30px;
+  width: 100%;
   padding: 3px 0;
   font-size:14px;
 }
-
 .profile-user-id {
-  /* display: block; */
-  position: fixed;
-  margin-left: 30px;
   text-align: center;
   font-size: 14px;
-  
-  /* max-height: 20px; */
-  height: 22px;
-  /* padding-top: 50px; */
-  margin-top:2px;
-  /* padding-top: 2px; */
+  margin-top: 2px;
   color: #ffffff;
-  width: 17%;
-  /* color: rgb(0, 80, 145); */
-  background-color: rgba(0, 172, 120, 0.637);
-  /* margin-left: 260px; */
-  border-radius: 0 0 5px 5px;
 }
 .profile-status{
   text-align:   center;
@@ -109,11 +91,16 @@
 
 
 .profile-services-grid {
-  padding-top: 20px;
   display: flex;
   background-color: rgba(245, 240, 240, 0.954);
   flex-wrap: wrap;
   box-shadow: 1px 1px 4px 3px rgb(164, 176, 192);
+  padding: 20px 4% 0;
+}
+
+.profile-text-block2 img,
+.profile-text-block-3 img {
+  width: 80%;
 }
 
 #rightside-title {
@@ -122,12 +109,10 @@
 }
 
 .profile-box{
-  padding-top: 35px;
-  margin-top: 40px;
-  /* margin-bottom: 0px; */
+  margin-top: 25px;
   position: fixed;
-  /* width: 200px; */
-  margin-left: -200px;
+  left: 30px;
+  text-align: center;
 }
 
  .right-side-profileContainer {
@@ -236,7 +221,6 @@
   box-shadow: 0px 1px 1px 1px rgb(111, 124, 118);
   background: white;
   height:160px;
-  margin-top: -80px;
 }
 #picture-text{
   text-align: center;
@@ -277,12 +261,7 @@ img {
   /* box-shadow: 0px 1px 1px 1px rgb(111, 124, 118); */
 
 }
-.profile-image-block1 {
-  text-align: center;
-  /* width: 250px; */
-}
-
-.profile-image-block1 button {
+.profile-box button {
   border: 01px solid rgba(190, 200, 201, 0.281);
   border-radius: 5px;
   font-size: 11px;
@@ -291,13 +270,11 @@ img {
   /* margin-left: -180px; */
 }
 
-
-
 .profile-text-block3a {
   font-size: 14px;
 }
 
-
+/* Profile contacts container */
 .profile-image-block3 { 
   box-shadow: 0px 1px 1px 1px rgb(111, 124, 118);
   /*position: fixed;*/
@@ -314,8 +291,24 @@ img {
   border-radius: 3px 3px 3px 3px;
   /*height: 200px;
   width: 180px;*/
+  height: 50vh;
+  overflow-y: auto;
+  /* Trying to fix scroll issue */
+  position: relative;
+  z-index: 999;
 }
 
+/* Profile contact */
+.profile-text-block2 {
+  border-bottom: 2px solid #EEE;
+  padding-bottom: 5px;
+  margin-bottom: 7px;
+}
+.profile-text-block2:last-child {
+  border: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
 
 /* #text2-container{
   background-color:tomato;
